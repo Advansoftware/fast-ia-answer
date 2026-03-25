@@ -5,15 +5,19 @@ Cole sua questão, aperte Enter e receba apenas: `"a resposta é X"`. Sem explic
 
 ![Fast IA Answer Preview](https://github.com/Advansoftware/fast-ia-answer/assets/example/preview.png) *(Ilustrativo)*
 
-## 🛠️ Tecnologias
+## 🛠️ Stack Tecnológica
 
-- **Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
-- **Linguagem**: TypeScript
-- **Interface**: [Material-UI (MUI)](https://mui.com/) c/ tema Dark
-- **Modelos de IA suportados**: 
-  - `gpt-4o-mini` (OpenAI) - Padrão, mais rápido e barato
-  - `gemini-2.0-flash` (Google Gemini) - Rápido e focado
-- **Deploy Recomendado**: Vercel
+O projeto foi construído com as seguintes dependências principais (conforme `package.json`):
+
+- **[Next.js](https://nextjs.org/)**: `16.2.1` (App Router)
+- **[React](https://react.dev/)**: `19.2.4`
+- **[Material-UI (MUI)](https://mui.com/)**: `^7.3.9` (com `@mui/material-nextjs` para SSR)
+- **[OpenAI SDK](https://github.com/openai/openai-node)**: `^6.32.0`
+- **[Google Generative AI SDK](https://github.com/google/generative-ai-js)**: `^0.24.1`
+
+**Modelos de IA suportados na interface**:
+- `gpt-4o-mini` (OpenAI) - **Padrão** (mais rápido e barato)
+- `gemini-2.0-flash` (Google Gemini) - Rápido e focado
 
 ## ✨ Funcionalidades
 
@@ -36,7 +40,7 @@ npm install
 ```
 
 ### 3. Configuração de Variáveis de Ambiente
-Crie um arquivo `.env.local` na raiz do projeto (o Git irá ignorá-lo):
+Crie um arquivo `.env.local` na raiz do projeto copiando o `.env.example`:
 ```bash
 cp .env.example .env.local
 ```
@@ -52,8 +56,8 @@ npm run dev
 ```
 Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-## 📝 Regra do Prompt
-O back-end trava a instrução da IA (System Prompt) para:
+## 📝 Regra do Prompt API
+A rota de API backend (`/api/answer`) trava o System Prompt para garantir que a IA obedeça à regra:
 > *"Você analisa questões de múltipla escolha. Responda EXCLUSIVAMENTE no formato: 'a resposta é X' onde X é a letra correta. NÃO explique, NÃO justifique, NÃO adicione nada mais."*
 
-Isso garante velocidade na leitura e **pouquíssimo gasto de tokens**.
+Isso garante velocidade extrema na geração e **baixo consumo de tokens**.
