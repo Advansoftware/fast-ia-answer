@@ -3,7 +3,7 @@
 Mini projeto focado em resolver questões de múltipla escolha com o máximo de velocidade e objetividade.
 Cole sua questão, aperte Enter e receba apenas: `"a resposta é X"`. Sem explicações, sem firulas.
 
-![Fast IA Answer Preview](https://github.com/Advansoftware/fast-ia-answer/assets/example/preview.png) *(Ilustrativo)*
+![Fast IA Answer Preview](./public/preview.png)
 
 ## 🛠️ Stack Tecnológica
 
